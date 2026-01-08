@@ -27,6 +27,11 @@ from .const import (
 from .errors import CannotLoginException
 from .router import NetgearRouter
 
+import requests
+import urllib3
+requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS = 'ALL:@SECLEVEL=1'
+
+
 _LOGGER = logging.getLogger(__name__)
 
 SCAN_INTERVAL = timedelta(seconds=30)
